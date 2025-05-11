@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Enviar Fatura - Zimio</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+    }
+    label {
+      font-weight: bold;
+    }
+    input, button {
+      width: 100%;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Upload de Fatura</h2>
+  <form action="https://n8n-railway-production-5ccc.up.railway.app/webhook/upload-fatura" method="POST" enctype="multipart/form-data">
+    
+    <label for="comercial_email">Email do Comercial:</label>
+    <input type="email" id="comercial_email" name="comercial_email" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+
+    <label for="file">Fatura (PDF):</label>
+    <input type="file" id="file" name="file" accept=".pdf" required>
+
+    <button type="submit">Enviar</button>
+  </form>
+</body>
+</html>
